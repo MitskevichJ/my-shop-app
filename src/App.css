@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 50px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #3b4a6b 60%, #6c757d 40%);
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.background-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.highlight-window {
+  width: 400px;
+  height: 600px;
+  background-image: url('https://raw.githubusercontent.com/netology-code/ra16-homeworks/refs/heads/ra-51/components/store-func/img/item-blue.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+}
+
+.highlight-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05); 
+}
+
+.window {
+  width: 400px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-content {
+  padding: 20px;
+  border: 1px dashed #9932cc; 
+}
+
+h2 {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 32px;
+  color: #000;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.highlight-window.mobile {
+  display: none; 
+  height: 300px;
+  background-image: url('https://raw.githubusercontent.com/netology-code/ra16-homeworks/refs/heads/ra-51/components/store-func/img/item-black.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  margin: 20px 0;
+  position: relative;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+.purchase-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .highlight-window {
+    display: none; 
+  }
+
+  .highlight-window.mobile {
+    display: block; 
+  }
+
+  .window {
+    width: 90%;
   }
 }
